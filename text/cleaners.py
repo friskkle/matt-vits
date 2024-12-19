@@ -15,7 +15,10 @@ hyperparameter. Some cleaners are English-specific. You'll typically want to use
 import re
 from unidecode import unidecode
 from phonemizer import phonemize
+from phonemizer.backend.espeak.wrapper import EspeakWrapper
 
+# initialize espeak location because in this project it couldn't find it automatically
+EspeakWrapper.set_library('C:\Program Files\eSpeak NG\libespeak-ng.dll')
 
 # Regular expression matching whitespace:
 _whitespace_re = re.compile(r'\s+')
